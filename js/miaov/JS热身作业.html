@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS热身作业</title>
+<style type="text/css">
+	*{padding:0;margin:0;}
+	body{font-family:"微软雅黑";position:relative;}
+	
+	.btn{border:none;height:41px;line-height:41px;font-size:16px;background:red;width:100px;color:#fff;cursor:pointer;outline:none;}
+	#box{border:3px solid #000;width:100px;height:100px;}
+	/* 弹出层 */
+	#mask{position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.4);display:none;}
+	#setting{position:absolute;right:20px;bottom:0;text-align:right;width:350px;height:300px;border:5px solid #ccc;background:#fff;}
+	.options{height:50px;margin:15px 20px 5px 30px;}
+	.options span{display:inline-block;width:40px;height:40px;text-align:center;line-height:40px;border:1px solid #000;margin-right:15px;cursor:pointer;}
+	.last span{width:70px;margin-right:46px;}
+	.first{margin-left: 16px;}
+</style>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var setBtn = document.getElementById("btn");// 点击的设置按钮
+		var mask = document.getElementById("mask");// 弹出层
+		var target = document.getElementById("box");// 
+		setBtn.onclick = function(){ mask.style.display = "block"; }
+		
+		// 设置颜色
+		var bgRedBtn = document.getElementById("setBgRed");
+		bgRedBtn.style.background = "red";
+		bgRedBtn.onclick = function(){ setBg('red'); }
+		var bgYellowBtn = document.getElementById("setBgYellow");
+		bgYellowBtn.style.background = "yellow";
+		bgYellowBtn.onclick = function(){setBg('yellow');}
+		var bgBlueBtn = document.getElementById("setBgBlue");
+		bgBlueBtn.style.background = "blue";
+		bgBlueBtn.onclick = function(){ setBg("blue"); }
+		// 设置宽度
+		var wBtn2 = document.getElementById("width200");
+		wBtn2.onclick = function(){ setWidth('200'); }
+		var wBtn3 = document.getElementById("width300");
+		wBtn3.onclick = function(){ setWidth('300'); }
+		var wBtn4 = document.getElementById("width400");
+		wBtn4.onclick = function(){ setWidth('400'); }
+		// 设置高度
+		var hBtn2 = document.getElementById("height200");
+		hBtn2.onclick = function(){ setHeight('200'); }
+		var hBtn3 = document.getElementById("height300");
+		hBtn3.onclick = function(){ setHeight('300'); }
+		var hBtn4 = document.getElementById("height400");
+		hBtn4.onclick = function(){ setHeight('400'); }
+		// 恢复
+		var reset = document.getElementById("reset");
+		reset.onclick = function(){ setBg('transparent');setWidth('100');setHeight('100'); } 
+		//  确定
+		var confirm = document.getElementById("confirm");
+		confirm.onclick = function(){ mask.style.display = "none"; }
+		
+		function setBg(bg){
+			target.style.background = bg;
+		}
+		function setWidth(width){
+			target.style.width = width + "px";
+		}
+		function setHeight(height){
+			target.style.height = height + "px";
+		}
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+<div id="mask">
+	<div id="setting">
+        <div class="options">
+            选择背景：
+            <span id="setBgRed" class="first">红色</span>
+            <span id="setBgYellow">黄色</span>
+            <span id="setBgBlue">蓝色</span>
+        </div>
+        <div class="options">
+            选择宽度(px):
+            <span id="width200" class="first">200</span>
+            <span id="width300">300</span>
+            <span id="width400">400</span>
+        </div>
+        <div class="options">
+            选择高度(px):
+            <span id="height200" class="first">200</span>
+            <span id="height300">300</span>
+            <span id="height400">400</span>
+        </div>
+        <div class="options last">
+        	<span id="reset">恢复</span>
+            <span id="confirm">确定</span>
+        </div>
+      </div>
+</div>
+<h2>请为以下DIV设置样式：<button class="btn" id="btn">点击设置</button></h2>
+<div id="box"></div>
+	
+</body>
+</html>
