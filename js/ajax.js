@@ -163,7 +163,7 @@ flyfish.ajaxFormDo = function(formId, beforeSubmitFn, successCallback, errorCall
 
 /**
  * 功能说明: 交易提示信息
- * @author ljf <liangjf@hundsun.com>
+ * @author ljf 
  * @date 2015-2-26 下午4:14:49
  * @version V1.0
  * @param msg 信息文本
