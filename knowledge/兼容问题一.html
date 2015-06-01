@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>兼容问题一</title>
+<style type="text/css">
+	.box{width:400px;}
+	.left{width:200px;height:300px;background:#F00;float:left;}
+	.right{width:200px;float:right;}
+	.div{width:180px;height:180px;background:green;padding:15px;}/*这里的padding导致宽高超出了父级元素，在IE6下会发生折行*/
+	/* 父级只有200px，但是本身180px的宽度，加上padding带来的30px，就是210px */
+</style>
+</head>
+
+<body>
+
+<div class="box">
+	<div class="left"></div>
+    <div class="right">
+    	<div class="div"></div>
+    </div>
+</div>
+<p>
+	总结：计算一定要精确 不要让内容的宽高超出我们设置的宽高，在IE6下，内容会撑开设置好的宽高
+</p>
+</body>
+</html>
