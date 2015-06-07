@@ -1,0 +1,3 @@
+use strict
+	"use strict"是ECMAScript 5引入的一条指令。指令不是语句（但非常接近于语句）。
+	
