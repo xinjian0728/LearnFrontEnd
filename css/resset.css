@@ -1,2 +1,8 @@
 /* 样式重置 */
+/* 为什幺进行样式重置？因为浏览器自带默认样式，同一个元素在不同浏览器中呈现的效果不一样 */
+/* 进行样式重置是为了网页在主流的浏览器中显示的效果都一致 */
 body,div,p,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+img{border:none;}
+ul,ol{list-style:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:underline;}
