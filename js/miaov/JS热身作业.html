@@ -18,42 +18,45 @@
 	.first{margin-left: 16px;}
 </style>
 <script type="text/javascript">
-	
+	function getEleById(id){
+		if(!id) return "";
+		return document.getElementById(id);
+	}
 	window.onload = function(){
-		var setBtn = document.getElementById("btn");// 点击的设置按钮
-		var mask = document.getElementById("mask");// 弹出层
-		var target = document.getElementById("box");// 
+		var setBtn = getEleById("btn");// 点击的设置按钮
+		var mask = getEleById("mask");// 弹出层
+		var target = getEleById("box");// 
 		setBtn.onclick = function(){ mask.style.display = "block"; }
 		
 		// 设置颜色
-		var bgRedBtn = document.getElementById("setBgRed");
+		var bgRedBtn = getEleById("setBgRed");
 		bgRedBtn.style.background = "red";
 		bgRedBtn.onclick = function(){ setBg('red'); }
-		var bgYellowBtn = document.getElementById("setBgYellow");
+		var bgYellowBtn = getEleById("setBgYellow");
 		bgYellowBtn.style.background = "yellow";
 		bgYellowBtn.onclick = function(){setBg('yellow');}
-		var bgBlueBtn = document.getElementById("setBgBlue");
+		var bgBlueBtn = getEleById("setBgBlue");
 		bgBlueBtn.style.background = "blue";
 		bgBlueBtn.onclick = function(){ setBg("blue"); }
 		// 设置宽度
-		var wBtn2 = document.getElementById("width200");
+		var wBtn2 = getEleById("width200");
 		wBtn2.onclick = function(){ setWidth('200'); }
-		var wBtn3 = document.getElementById("width300");
+		var wBtn3 = getEleById("width300");
 		wBtn3.onclick = function(){ setWidth('300'); }
-		var wBtn4 = document.getElementById("width400");
+		var wBtn4 = getEleById("width400");
 		wBtn4.onclick = function(){ setWidth('400'); }
 		// 设置高度
-		var hBtn2 = document.getElementById("height200");
+		var hBtn2 = getEleById("height200");
 		hBtn2.onclick = function(){ setHeight('200'); }
-		var hBtn3 = document.getElementById("height300");
+		var hBtn3 = getEleById("height300");
 		hBtn3.onclick = function(){ setHeight('300'); }
-		var hBtn4 = document.getElementById("height400");
+		var hBtn4 = getEleById("height400");
 		hBtn4.onclick = function(){ setHeight('400'); }
 		// 恢复
-		var reset = document.getElementById("reset");
+		var reset = getEleById("reset");
 		reset.onclick = function(){ setBg('transparent');setWidth('100');setHeight('100'); } 
 		//  确定
-		var confirm = document.getElementById("confirm");
+		var confirm = getEleById("confirm");
 		confirm.onclick = function(){ mask.style.display = "none"; }
 		
 		function setBg(bg){
